@@ -1,10 +1,9 @@
 <h1> Tomcat Takeover Blue Team Lab (Cyberdefender) </h1>
 
 <h2>Scenerio</h2>
-Our SOC team has detected suspicious activity on one of the web servers within the company's intranet. In order to gain a deeper understanding of the situation, the team has captured network traffic for analysis. This pcap file potentially contains a series of malicious activities that have resulted in the compromise of the Apache Tomcat web server. We need to investigate this incident further.<b/>
+Our SOC team has detected suspicious activity on one of the web servers within the company's intranet. In order to gain a deeper understanding of the situation, the team has captured network traffic for analysis. This pcap file potentially contains a series of malicious activities that have resulted in the compromise of the Apache Tomcat web server. We need to investigate this incident further.</b>
 
-<br >NB: At the time of this documentation, this lab was active on [Cyberdefender](https://cyberdefenders.org/blueteam-ctf-challenges/135#nav-overview). Hence, no available walkthrough. 
-
+<b><br>NB: At the time of this documentation, this lab was active on [Cyberdefender](https://cyberdefenders.org/blueteam-ctf-challenges/135#nav-overview). Hence, no available walkthrough.</b> Sign into your Cyberdefender account, navigate to the practice lab section and download the Pcap file.</br>
 
 <h2>Tools used include:</h2
 
@@ -15,10 +14,14 @@ Our SOC team has detected suspicious activity on one of the web servers within t
 <h2>Question 1 </h2>
 <b>Given the suspicious activity detected on the web server, the pcap analysis shows a series of requests across various ports, suggesting a potential scanning behavior. Can you identify the source IP address responsible for initiating these requests on our server?</b>
 
+<br>So, by scanning through the pcap file, you can easily identify multiple syn packets from an IP address to a particular destination IP address but with varying destination ports. Also, you can use this wireshark filter <b>((http.request or tls.handshake.type eq 1 or tcp.flags eq 0x0002) and !(ssdp))</b> to identify the suspicious source IP address
 
 <p align="center">
-<img src="https://imgur.com/SJohW8K.png" height="100%" width="80%" alt="Phishing Sample 1"/> 
+<img src="https://imgur.com/Rr4qOOA" height="100%" width="80%" alt="Phishing Sample 1"/> 
 <br />
+
+<h2>Question 2 </h2>
+<b>Based on the identified IP address associated with the attacker, can you ascertain the city from which the attacker's activities originated? </b>
 
 The sample mail pretends to be legitimate coming from Microsoft (sender's address). However, the content of the mail focuses on **crypto**, which is absurd because the services rendered by Microsoft doesn't include cryptocurrency. Also, the closure signature references a different domain (Binance.com) and a [WHOIS](https://whois.domaintools.com) lookup on Binance.com, shows organization as DNStination Inc.
 
