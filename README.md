@@ -30,12 +30,42 @@ Our SOC team has detected suspicious activity on one of the web servers within t
 
 <h2>Question 3 </h2>
 <b>From the pcap analysis, multiple open ports were detected as a result of the attacker's activity scan. Which of these ports provides access to the web server admin panel?</b>
-<br>My approach was filtering using HTTP GET request with the attacker's IP address containing "admin" related frames <b>( ip.src eq 14.0.0.120) && (http.request.method == "GET") and frame contains "admin"</b>. Then, note the destination port.
+<br>My approach was filtering using HTTP GET request with the attacker's IP address containing "admin" related frames <b>((ip.src eq 14.0.0.120) && (http.request.method == "GET") and frame contains "admin")</b>. Then, note the destination port.
 <p align="center">
 <img src="https://imgur.com/z8Pe7HA" height="100%" width="80%" alt="Dst_port"/> 
 <br />
 
 <h2>Question 4 </h2>
 <b>Following the discovery of open ports on our server, it appears that the attacker attempted to enumerate and uncover directories and files on our web server. Which tools can you identify from the analysis that assisted the attacker in this enumeration process? </b>
-<br> From the answer to question 3, click on the frame  
+<br> From the answer to question 3, click on the frame and follow either the TCP or HTTP stream. Pay attention to the user agent type and google it to get more information
+<p align="center">
+<img src="https://imgur.com/TiajAMr" height="100%" width="80%" alt="Enumeration_tool"/> 
+<br />
 
+<h2>Question 5 </h2>
+<b>Subsequent to their efforts to enumerate directories on our web server, the attacker made numerous requests trying to identify administrative interfaces. Which specific directory associated with admin panel was the attacker able to uncover?</b>
+<br> Also from question 4, Strolling through the TCP or HTTP stream that was followed, you will see an <b>HTTP response code 401: Unauthorized</b> . Above it is the directory that was brute-forced which returned the said response code.
+<p align="center">
+<img src="https://imgur.com/XdVB8w8" height="100%" width="80%" alt="Admin_directory"/> 
+<br />
+
+<h2>Question 6 </h2>
+<b>Upon accessing the admin panel, the attacker made attempts to brute-force the login credentials. From the data, can you identify the correct username and password combination that the attacker successfully used for authorization?</b>
+<br> From the previous answer, it is known what the admin directory is.  .
+<p align="center">
+<img src="https://imgur.com/XdVB8w8" height="100%" width="80%" alt="Admin_directory"/> 
+<br />
+
+<h2>Question 7 </h2>
+<b>Once inside the admin panel, the attacker attempted to upload a file with the intent of establishing a reverse shell. Can you identify the name of this malicious file from the capture data?</b>
+<br> Also, from question 4, Strolling through the TCP or HTTP stream that was followed, you will see an <b>HTTP response code 401: Unauthorized</b> . Above it is the directory that was brute-forced which returned the said response code.
+<p align="center">
+<img src="https://imgur.com/XdVB8w8" height="100%" width="80%" alt="Admin_directory"/> 
+<br />
+
+<h2>Question 8 </h2>
+<b>Upon successfully establishing a reverse shell on our server, the attacker aimed to ensure persistence on the compromised machine. From the analysis, can you determine the specific command they are scheduled to run to maintain their presence?</b>
+<br> Also, from question 4, Strolling through the TCP or HTTP stream that was followed, you will see an <b>HTTP response code 401: Unauthorized</b> . Above it is the directory that was brute-forced which returned the said response code.
+<p align="center">
+<img src="https://imgur.com/XdVB8w8" height="100%" width="80%" alt="Admin_directory"/> 
+<br />
