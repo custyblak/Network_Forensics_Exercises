@@ -1,6 +1,6 @@
 # Network Forensics Repository
 
-This collection includes approaches and analyses of PCAP (Packet Capture) files from CyberDefenders challenges and real-world malware incidents with the sole aim to enhance my network forensics skills.
+This collection includes approaches and analyses of PCAP (Packet Capture) files from CyberDefenders challenges and real-world malware incidents with the sole aim of enhancing my Wireshark and network forensics skills.
 
 ## Table of Contents
 
