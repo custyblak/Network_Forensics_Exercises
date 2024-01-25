@@ -1,16 +1,3 @@
-<h1> Tomcat Takeover Blue Team Challenge (Cyberdefender) </h1>
-
-<h2>Scenerio</h2>
-Our SOC team has detected suspicious activity on one of the web servers within the company's intranet. In order to gain a deeper understanding of the situation, the team has captured network traffic for analysis. This pcap file potentially contains a series of malicious activities that have resulted in the compromise of the Apache Tomcat web server. We need to investigate this incident further.</b>
-
-<b><br>NB: At the time of this documentation, this lab was active on [Cyberdefender](https://cyberdefenders.org/blueteam-ctf-challenges/135#nav-overview). Hence, publishing the solutions weren't allowed. But this is just to track my approach to the chanllenge.</b> Sign into your Cyberdefender account, navigate to the practice lab section and download the Pcap file.</br>
-
-<h2>Tools used include:</h2
-
-- <b>Wireshark</b>
-- <b>Networkminer</b>  
-
-
 <h2>Question 1 </h2>
 <b>Given the suspicious activity detected on the web server, the pcap analysis shows a series of requests across various ports, suggesting a potential scanning behavior. Can you identify the source IP address responsible for initiating these requests on our server?</b>
 
