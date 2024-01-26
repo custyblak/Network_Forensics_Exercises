@@ -4,7 +4,7 @@
 <br>First of all, lets check to see the conversations that was captured in this PCAP. Under the statistics tab, navigate to the Conversions and you will notice that a particular communication involved large transmission of packets from the source IP address to a particular destination IP address on port 443 and given that data exfiltration is being investigated. So, this communication seems obvious.
 
 <p align="center">
-<img src=".png" height="100%" width="80%" alt="Attacker's IP addr"/> 
+<img src="https://imgur.com/6yjWjrD.png" height="100%" width="80%" alt="C2 Server"/> 
 <br />
 
 <h2>Question 2 </h2>
