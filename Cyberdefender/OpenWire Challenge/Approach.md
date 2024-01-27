@@ -33,14 +33,14 @@
 
 <h2>Question 5 </h2>
 <b>Attackers usually leave traces on the disk. What is the name of the reverse shell executable dropped on the server?</b><br />
-<br> Referencing the script observed within the invoice.xml file, the executable file stored in the /tmp directory is your answer or you can filter using the C2 server as a destination with a GET HTTP request method (iip.dst eq 128.199.52.72 and http.request.method eq GET). Follow the HTTP stream and you will seen the format of the file and the name of the file /br>
+<br> Referencing the script observed within the invoice.xml file, the executable file stored in the /tmp directory is your answer or you can filter using the C2 server as a destination with a GET HTTP request method (iip.dst eq 128.199.52.72 and http.request.method eq GET). Follow the HTTP stream and you will seen the format of the file and the name of the file </br>
 <p align="center">
 <img src="https://imgur.com/XdVB8w8.png" height="100%" width="80%" alt="Admin_directory"/> 
 <br/>
 
 <h2>Question 6 </h2>
 <b>What Java class was invoked by the XML file to run the exploit?</b><br />
-<br>Follow the HTTP stream of the invoice.xml file, then read the content of the file. You would see what you are looking for.<br />
+<br> Read the content of the invoice.xml file after following its HTTP stream, you would see what you are looking for.<br />
 
 <p align="center">
 <img src="https://imgur.com/OPcixPu.png" height="100%" width="80%" alt="Credentials"/> 
@@ -49,7 +49,7 @@
   
 <h2>Question 7 </h2>
 <b>To better understand the specific security flaw exploited, can you identify the CVE identifier associated with this vulnerability?</b><br />
-<br>
+<br> A simple google search of the vulnerability associated with the identified vulnerable service
 
 <p align="center">
 <img src="https://imgur.com/yANADqF.png" height="100%" width="80%" alt="Attacker's file_upload"/> 
