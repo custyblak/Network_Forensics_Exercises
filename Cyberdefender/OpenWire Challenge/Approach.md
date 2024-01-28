@@ -60,7 +60,7 @@
 <br />
 <h2>Question 8 </h2>
 <b>What is the vulnerable Java method and class that allows an attacker to run arbitrary code? (Format: Class.Method)</b><br />
-<br> 
+<br> This questions requires you to research more on the vulnerability. My approach was to compare and note the difference between the patch of the vulnerability and the initial code. 
 <p align="center">
 <img src="https://imgur.com/QCZlkGx.png" height="100%" width="80%" alt="persistence_command"/> 
 <br />
