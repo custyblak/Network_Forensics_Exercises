@@ -13,7 +13,7 @@ Explore the `cyberdefenders-walkthroughs` directory to find detailed analyses of
 
 - [Challenge 1: OpenWire](https://github.com/custyblak/Network_Forensics_Exercises/tree/main/Cyberdefender/OpenWire%20Challenge)
 - [Challenge 2: Tomcat Takeover](https://github.com/custyblak/Network_Forensics_Exercises/tree/main/Cyberdefender/Tomcat%20Takeover%20Challenge)
-- [Challenge 3: Detecting Anomalies in Network Traffic](cyberdefenders-walkthroughs/challenge-3/README.md)
+- [Challenge 3: PsExec Hunt Challenge](https://github.com/custyblak/Network_Forensics_Exercises/tree/main/Cyberdefender/PsExec%20Hunt%20Challenge)
 
 Feel free to contribute your own walkthroughs or improve existing ones!
 
