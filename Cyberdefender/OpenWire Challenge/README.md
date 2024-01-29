@@ -3,7 +3,7 @@
 <h2>Scenerio</h2>
 During your shift as a tier-2 SOC analyst, you receive an escalation from a tier-1 analyst regarding a public-facing server. This server has been flagged for making outbound connections to multiple suspicious IPs. In response, you initiate the standard incident response protocol, which includes isolating the server from the network to prevent potential lateral movement or data exfiltration and obtaining a packet capture from the NSM utility for analysis. Your task is to analyze the pcap and assess for signs of malicious activity.
 
-<br>NB: At the time of this documentation, this lab was active on [Cyberdefender](https://cyberdefenders.org/blueteam-ctf-challenges/153#tab=details). Hence, I will showcase my approach to the solution and not explicitly the answers and it can be found [here](https://github.com/custyblak/Network_Forensics_Exercises/blob/main/Cyberdefender/OpenWire%20Challenge/Approach.md)
+<br>NB: At the time of this documentation, this lab was active on [Cyberdefender](https://cyberdefenders.org/blueteam-ctf-challenges/153#tab=details). Hence, I will showcase my approach to the solutions and not explicitly the answers and it can be found [here](https://github.com/custyblak/Network_Forensics_Exercises/blob/main/Cyberdefender/OpenWire%20Challenge/Approach.md)
 
 <h2>Tool used:</h2>
 
