@@ -3,7 +3,7 @@
 <h2>Scenerio</h2>
 Our SOC team has detected suspicious activity on one of the web servers within the company's intranet. In order to gain a deeper understanding of the situation, the team has captured network traffic for analysis. This pcap file potentially contains a series of malicious activities that have resulted in the compromise of the Apache Tomcat web server. We need to investigate this incident further.
 
-<br>NB: At the time of this documentation, this lab was active on [Cyberdefender](https://cyberdefenders.org/blueteam-ctf-challenges/135#nav-overview). Hence, I will showcase my approach to the solution and not explicitly the answers and it can be found [here](https://github.com/custyblak/PCAP-Network-Forensics/blob/main/Tomcat%20Takeover%20Blue%20Team%20LAB/Approach.md)
+<br>NB: At the time of this documentation, this lab was active on [Cyberdefender](https://cyberdefenders.org/blueteam-ctf-challenges/135#nav-overview). Hence, I will showcase my approach to the solution and not explicitly the answers and it can be found [here](https://github.com/custyblak/Network_Forensics_Exercises/blob/main/Cyberdefender/Tomcat%20Takeover%20Challenge/Approach.md)
 
 <h2>Tools used include:</h2>
 
