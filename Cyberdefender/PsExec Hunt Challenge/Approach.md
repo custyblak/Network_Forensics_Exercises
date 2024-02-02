@@ -1,7 +1,7 @@
 <h2>Question 1 </h2>
 <b> In order to effectively trace the attacker's activities within our network, can you determine the IP address of the machine where the attacker initially gained access?</b>
 
-<br>
+<br>Goto conversation, under statistics to see the flow of packets between endpoints within the capture. You will notice large flow of packets between 2 endpoints. Apply that conversation as a filter and scan through the capture, you will notice some frames with a particular source IP address shows the PsEXEC.EXEC within the info section. 
 
 <p align="center">
 <img src=".png" height="100%" width="80%" alt="C2 Server"/> 
@@ -9,14 +9,14 @@
 
 <h2>Question 2 </h2>
 <b>To fully comprehend the extent of the breach, can you determine the machine's hostname to which the attacker first pivoted?</b>
-<br><br />
+<br>Using the filter applied to question 1, my approach was to follow the TCP stream and boom! the answer was at my face. My second approach was to check the protocol hierarcy for NetBios Name service but rather I saw NetBios session service and after a few googling, I understood that this service also uses the function of NetBios names for identification. So, I applied it (nbss) as a filter and opened one of the frames, the same answer was seen.<br />
 <p align="center">
 <img src=".png" height="100%" width="80%" alt="Entry_port"/> 
 <br />
 
 <h2>Question 3 </h2>
 <b>After identifying the initial entry point, it's crucial to understand how far the attacker has moved laterally within our network. Knowing the username of the account the attacker used for authentication will give us insights into the extent of the breach. What is the username utilized by the attacker for authentication?</b>
-<br>
+<br>With the "nbss" filter applied, I noticed that the info on one of the frames had NTLMSSP_AUTH request, I clicked on the frame and there was my answer.
 
 <p align="center">
 <img src=".png" height="100%" width="80%" alt="Vuln_service1"/>, 
