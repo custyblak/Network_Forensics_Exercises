@@ -27,7 +27,7 @@
 
 <h2>Question 4 </h2>
 <b>After figuring out how the attacker moved within our network, we need to know what they did on the target machine. What's the name of the service executable the attacker set up on the target?</b><br />
-<br>
+<br>With the same filter applied, you can either follow the TCP stream or following the info of the frames, you will noticed an executable file that was created by the attacker
 
 <p align="center">
 <img src=".png" height="100%" width="80%" alt="C2 server"/> 
@@ -35,14 +35,14 @@
 
 <h2>Question 5 </h2>
 <b>We need to know how the attacker installed the service on the compromised machine to understand the attacker's lateral movement tactics. This can help identify other affected systems. Which network share was used by PsExec to install the service on the target machine?</b><br />
-<br></br>
+<br>Still on the applied filter, you will notice that before the executable was created on the victim's machine, the attacker made a connection request to an smb share which is clearly seen on the frames info.</br>
 <p align="center">
 <img src=".png" height="100%" width="80%" alt="Executable_file"/> 
 <br/>
 
 <h2>Question 6 </h2>
 <b>We must identify the network share used to communicate between the two machines. Which network share did PsExec use for communication?</b><br />
-<br><br />
+<br>Using the same approach to question 5, before the attacker connected to the smb share in question 5, the attacker firstly connected to another and this can be seen in the info section of the frames.<br />
 
 <p align="center">
 <img src=".png" height="100%" width="80%" alt="Java_class"/> 
@@ -50,7 +50,7 @@
 
   
 <h2>Question 7 </h2>
-<b>Now that we have a clearer picture of the attacker's activities on the compromised machine, it's important to identify any further lateral movement. What is the machine's hostname to which the attacker attempted to pivot within our network?</b><br />
+<b>Now that we have a clearer picture of the attacker's activities on the compromised machine, it's important to identify any further lateral movement. What is the machine's hostname to which the attacker attempted to pivot within our network?</b>My approach was to apply the "NetBIOS computer name" as a column and then observed when there is a change of name<br />
 <br> 
 
 <p align="center">
