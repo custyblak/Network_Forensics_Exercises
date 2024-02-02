@@ -50,8 +50,8 @@
 
   
 <h2>Question 7 </h2>
-<b>Now that we have a clearer picture of the attacker's activities on the compromised machine, it's important to identify any further lateral movement. What is the machine's hostname to which the attacker attempted to pivot within our network?</b>My approach was to apply the "NetBIOS computer name" as a column and then observed when there is a change of name<br />
-<br> 
+<b>Now that we have a clearer picture of the attacker's activities on the compromised machine, it's important to identify any further lateral movement. What is the machine's hostname to which the attacker attempted to pivot within our network?</b><br />
+<br> My approach was to apply the "NetBIOS computer name" as a column and then observed when there is a change of name
 
 <p align="center">
 <img src=".png" height="100%" width="80%" alt="CVE_ID"/> 
